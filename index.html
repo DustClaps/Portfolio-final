@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — Chebbi Wael</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- LIAISON DU FICHIER CSS -->
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Éléments de curseur et effets -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Intro / Loader -->
+  <div id="intro">
+    <div class="intro-burst"></div>
+    <div class="intro-center">
+      <div class="intro-ring"></div>
+      <div class="intro-text">Chargement</div>
+    </div>
+  </div>
+
+  <!-- Effets visuels d'arrière-plan -->
+  <div class="fx z1"><div class="tint"></div></div>
+  <div class="fx z2">
+    <div class="sun-flare">
+      <div class="core"></div>
+      <div class="ray"></div>
+      <div class="ray"></div>
+      <div class="ray"></div>
+      <div class="ray"></div>
+    </div>
+    <div class="lens-artifact f1"></div>
+    <div class="lens-artifact f2"></div>
+    <div class="lens-artifact f3"></div>
+    <div class="lens-artifact f4"></div>
+    <div class="aurora"></div>
+  </div>
+  <div class="fx z3" id="bubbleLayer"></div>
+  <div class="float-layer" id="emojiLayer"></div>
+
+  <!-- Barre supérieure de style Windows Vista -->
+  <div class="vista-chrome">
+    <div class="vc-controls">
+      <button class="vc-btn min">_</button>
+      <button class="vc-btn max">[]</button>
+      <button class="vc-btn close">X</button>
+    </div>
+    <div class="vc-title">
+      <span class="vc-gem"></span>
+      <span>Explorer.exe — Portfolio_Wael.lnk</span>
+    </div>
+  </div>
+
+  <!-- Barre de navigation Aero -->
+  <nav class="aero-nav">
+    <div class="nav-logo">
+      <span class="gem"></span>
+      <span>Chebbi Wael</span>
+    </div>
+    <ul>
+      <li><button class="nav-btn" data-modal="about">Présentation</button></li>
+      <li><button class="nav-btn" data-modal="projects">Projets</button></li>
+      <li><button class="nav-btn" data-modal="skills">Compétences</button></li>
+      <li><button class="nav-btn" data-modal="contact">Contact</button></li>
+    </ul>
+  </nav>
+
+  <!-- Section principale Hero -->
+  <main class="hero">
+    <div class="hero-panel">
+      <h1>Bonjour, je suis <span class="accent">Chebbi Wael</span></h1>
+      
+      <div class="hero-specialties">
+        <span class="spec-chip">Développement Web</span>
+        <span class="spec-chip">UI / UX Design</span>
+        <span class="spec-chip">Style Frutiger Aero</span>
+      </div>
+
+      <p class="hero-tagline">Créateur d'expériences numériques immersives et interactives.</p>
+      <p class="hero-tagline muted">Bienvenue sur mon espace inspiré de l'esthétique Windows Vista & Glossy.</p>
+
+      <div class="formation-badge">
+        <span class="dot"></span>
+        <span>Disponible pour de nouveaux projets</span>
+      </div>
+
+      <div class="cta-group">
+        <button class="glossy-btn primary" data-modal="projects">Voir mes projets</button>
+        <button class="glossy-btn secondary" data-modal="contact">Me contacter</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Système de fenêtres modales Aero (Windows) -->
+  <div class="modal-overlay" id="overlay"></div>
+
+  <!-- Fenêtre À propos -->
+  <div class="aero-window" id="modal-about">
+    <div class="window-titlebar">
+      <div class="window-title">
+        <span class="ic">👤</span>
+        <span>Présentation.txt</span>
+      </div>
+      <div class="window-controls">
+        <button class="win-btn min"></button>
+        <button class="win-btn max"></button>
+        <button class="win-btn close"><span>x</span></button>
+      </div>
+    </div>
+    <div class="window-content">
+      <h2>À propos de moi</h2>
+      <p>Passionné par le design numérique et le développement frontend, j'aime redonner vie aux designs iconiques du web tout en utilisant les technologies modernes.</p>
+    </div>
+  </div>
+
+  <!-- Fenêtre Projets -->
+  <div class="aero-window" id="modal-projects">
+    <div class="window-titlebar">
+      <div class="window-title">
+        <span class="ic">📁</span>
+        <span>Mes_Projets.exe</span>
+      </div>
+      <div class="window-controls">
+        <button class="win-btn min"></button>
+        <button class="win-btn max"></button>
+        <button class="win-btn close"><span>x</span></button>
+      </div>
+    </div>
+    <div class="window-content">
+      <h2>Galerie de Projets</h2>
+      <div class="project-filters" style="margin-bottom: 15px;">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+      </div>
+      <div id="projectGrid" class="project-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+        <div class="project-card" data-cat="web" style="background: rgba(255,255,255,0.4); padding: 15px; border-radius: 8px; border: 1px solid var(--glass-bd);">
+          <h3>Projet Web 1</h3>
+          <p>Application construite avec des technologies modernes.</p>
+        </div>
+        <div class="project-card" data-cat="design" style="background: rgba(255,255,255,0.4); padding: 15px; border-radius: 8px; border: 1px solid var(--glass-bd);">
+          <h3>Maquette Concept</h3>
+          <p>Design UI d'inspiration rétro-futuriste.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fenêtre Compétences -->
+  <div class="aero-window" id="modal-skills">
+    <div class="window-titlebar">
+      <div class="window-title">
+        <span class="ic">📊</span>
+        <span>Competences.sys</span>
+      </div>
+      <div class="window-controls">
+        <button class="win-btn min"></button>
+        <button class="win-btn max"></button>
+        <button class="win-btn close"><span>x</span></button>
+      </div>
+    </div>
+    <div class="window-content">
+      <h2>Mes Compétences</h2>
+      <p>HTML5 / CSS3 / JavaScript (ES6) / UI-UX Design / Optimisation des performances GPU.</p>
+    </div>
+  </div>
+
+  <!-- Fenêtre Contact -->
+  <div class="aero-window" id="modal-contact">
+    <div class="window-titlebar">
+      <div class="window-title">
+        <span class="ic">✉️</span>
+        <span>Contact.hlp</span>
+      </div>
+      <div class="window-controls">
+        <button class="win-btn min"></button>
+        <button class="win-btn max"></button>
+        <button class="win-btn close"><span>x</span></button>
+      </div>
+    </div>
+    <div class="window-content">
+      <h2>Me contacter</h2>
+      <p>Envoyez-moi un message pour collaborer ou simplement échanger sur l'univers de la création web !</p>
+    </div>
+  </div>
+
+  <!-- LIAISON DU FICHIER JAVASCRIPT -->
+  <script src="./script.js" defer></script>
+</body>
+</html>
